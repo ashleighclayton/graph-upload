@@ -31,12 +31,12 @@
         (function(d3) {
           'use strict';
 
-          // var dataset = [
-            // { label: 'Abulia', count: 10 },
-            // { label: 'Betelgeuse', count: 20 },
-            // { label: 'Cantaloupe', count: 30 },
-            // { label: 'Dijkstra', count: 40 }
-          // ];
+          var dataset = [
+            { label: 'Abulia', count: 10 },
+            { label: 'Betelgeuse', count: 20 },
+            { label: 'Cantaloupe', count: 30 },
+            { label: 'Dijkstra', count: 40 }
+          ];
 
           var width = 360;
           var height = 360;
@@ -63,7 +63,7 @@
             .value(function(d) { return d.count; })
             .sort(null);
 
-          d3.csv('weekdays.csv', function(error, dataset) {dataset.forEach(function(d) {d.count = +d.count;});
+          d3.csv('http://localhost/weekdays.csv', function(error, dataset) {dataset.forEach(function(d) {d.count = +d.count;});
 
             var path = svg.selectAll('path')
               .data(pie(dataset))
@@ -103,14 +103,4 @@
         })(window.d3);
       </script>
   </body>
-</html>
-
-    <head>
-        <title>Chart Test</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="">Chart Test</a></h1>
-        </div>
-    </body>
 </html>
